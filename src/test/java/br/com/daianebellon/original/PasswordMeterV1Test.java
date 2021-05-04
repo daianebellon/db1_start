@@ -32,13 +32,11 @@ class PasswordMeterV1Test {
                 "[C: 1 | B: 3] Sequential Numbers\n" +
                 "[C: 0 | B: 0] Sequential Symbols";
 
-        //setup
+
         PasswordMeterV1 meter = new PasswordMeterV1();
 
-        //act
         meter.checkPassword("@123@");
 
-        //verify // Se não tiver o resultado esperado: System.out.println(meter);
-        Assertions.assertEquals(resultadoEsperado, meter.toString());
+        assertEquals(resultadoEsperado, meter.toString());
     }
 }
