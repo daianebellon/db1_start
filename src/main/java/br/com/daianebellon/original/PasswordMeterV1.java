@@ -1,11 +1,12 @@
-package br.com.daianebellon.db1start;
+package br.com.daianebellon.original;
 
 public class PasswordMeterV1 {
     public int score;
     public String password;
     public String sComplexity = "Too Short";
 
-    // Results
+    // Results // Additions and deductions
+    //bonus, count
     public int bonusLength, countLength;
     public int bonusAlphaUC, countAlphaUC;
     public int bonusAlphaLC, countAlphaLC;
