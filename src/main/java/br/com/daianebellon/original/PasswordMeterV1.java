@@ -30,17 +30,16 @@ public class PasswordMeterV1 {
 
     public void checkPassword(String candidate) {
         password = candidate;
-        int multiplierLength = 4;
 
         Integer nTmpAlphaUC = null, nTmpAlphaLC = null, nTmpNumber = null;
         double incrementDeductionOfRepeatedChars = 0;
 
-        score = candidate.length() * multiplierLength;
+        score = candidate.length() * 4;
         countLength = candidate.length();
-        String[] arrPwd = candidate.replaceAll("\\s+", "").split("\\s*");
+        String[] caracteresDaSenha = candidate.replaceAll("\\s+", "").split("\\s*");
 
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[A-Z]")) {
+        for (int i = 0; i < caracteresDaSenha.length; i++) {
+            if (caracteresDaSenha[i].matches("[A-Z]")) {
                 if (nTmpAlphaUC != null) {
                     if (nTmpAlphaUC + 1 == i) {
                         countConsecutiveAlphaUC++;
@@ -48,7 +47,7 @@ public class PasswordMeterV1 {
                 }
                 nTmpAlphaUC = i;
                 countAlphaUC++;
-            } else if (arrPwd[i].matches("[a-z]")) {
+            } else if (caracteresDaSenha[i].matches("[a-z]")) {
                 if (nTmpAlphaLC != null) {
                     if (nTmpAlphaLC + 1 == i) {
                         countConsecutiveAlphaLC++;
@@ -56,8 +55,8 @@ public class PasswordMeterV1 {
                 }
                 nTmpAlphaLC = i;
                 countAlphaLC++;
-            } else if (arrPwd[i].matches("[0-9]")) {
-                if (i > 0 && i < arrPwd.length - 1) {
+            } else if (caracteresDaSenha[i].matches("[0-9]")) {
+                if (i > 0 && i < caracteresDaSenha.length - 1) {
                     countMidChar++;
                 }
                 if (nTmpNumber != null) {
@@ -67,8 +66,8 @@ public class PasswordMeterV1 {
                 }
                 nTmpNumber = i;
                 countNumber++;
-            } else if (arrPwd[i].matches("[^a-zA-Z0-9_]")) {
-                if (i > 0 && i < arrPwd.length - 1) {
+            } else if (caracteresDaSenha[i].matches("[^a-zA-Z0-9_]")) {
+                if (i > 0 && i < caracteresDaSenha.length - 1) {
                     countMidChar++;
                 }
                 countSymbol++;
@@ -76,16 +75,16 @@ public class PasswordMeterV1 {
 
             /* Internal loop through password to check for repeat characters */
             var bCharExists = false;
-            for (int j = 0; j < arrPwd.length; j++) {
-                if (arrPwd[i].equals(arrPwd[j]) && i != j) { /* repeat character exists */
+            for (int j = 0; j < caracteresDaSenha.length; j++) {
+                if (caracteresDaSenha[i].equals(caracteresDaSenha[j]) && i != j) { /* repeat character exists */
                     bCharExists = true;
 
-                    incrementDeductionOfRepeatedChars += Math.abs(arrPwd.length / (j - i));
+                    incrementDeductionOfRepeatedChars += Math.abs(caracteresDaSenha.length / (j - i));
                 }
             }
             if (bCharExists) {
                 countRepChar++;
-                int countUniqueCharacters = arrPwd.length - countRepChar;
+                int countUniqueCharacters = caracteresDaSenha.length - countRepChar;
                 incrementDeductionOfRepeatedChars = countUniqueCharacters != 0 ?
                         Math.ceil(incrementDeductionOfRepeatedChars / countUniqueCharacters) :
                         Math.ceil(incrementDeductionOfRepeatedChars);
