@@ -25,19 +25,23 @@ public class VerificadorDeSenha {
         metricaSimbolos.calcula(senha);
         caracteristicasDaSenha.setSimbolos(metricaSimbolos);
 
-        MetricaDeductionsSomenteLetrasMinusculas metricaDeductionsSomenteLetrasMinusculas = new MetricaDeductionsSomenteLetrasMinusculas();
+        MetricaDecrementaSomenteLetrasMinusculas metricaDeductionsSomenteLetrasMinusculas = new MetricaDecrementaSomenteLetrasMinusculas();
         metricaDeductionsSomenteLetrasMinusculas.calcula(senha);
         caracteristicasDaSenha.setSomenteLetrasMinusculas(metricaDeductionsSomenteLetrasMinusculas);
 
-        MetricaDeductionsSomenteLetrasMaiusculas metricaDeductionsSomenteLetrasMaiusculas = new MetricaDeductionsSomenteLetrasMaiusculas();
+        MetricaDecrementaSomenteLetrasMaiusculas metricaDeductionsSomenteLetrasMaiusculas = new MetricaDecrementaSomenteLetrasMaiusculas();
         metricaDeductionsSomenteLetrasMaiusculas.calcula(senha);
         caracteristicasDaSenha.setSomenteletrasMaiusculas(metricaDeductionsSomenteLetrasMaiusculas);
 
-        MetricaDeductionsSomenteNumeros metricaDeductionsSomenteNumeros = new MetricaDeductionsSomenteNumeros();
+        MetricaDecretementaSomenteLetras metricaDecretementaSomenteLetras = new MetricaDecretementaSomenteLetras();
+        metricaDecretementaSomenteLetras.calcula(senha);
+        caracteristicasDaSenha.setSomenteLetras(metricaDecretementaSomenteLetras);
+
+        MetricaDecrementaSomenteNumeros metricaDeductionsSomenteNumeros = new MetricaDecrementaSomenteNumeros();
         metricaDeductionsSomenteNumeros.calcula(senha);
         caracteristicasDaSenha.setSomentenumeros(metricaDeductionsSomenteNumeros);
 
-        MetricaDeductionsSomenteSimbolos metricaDeductionsSomenteSimbolos = new MetricaDeductionsSomenteSimbolos();
+        MetricaDecrementaSomenteSimbolos metricaDeductionsSomenteSimbolos = new MetricaDecrementaSomenteSimbolos();
         metricaDeductionsSomenteSimbolos.calcula(senha);
         caracteristicasDaSenha.setSomenteSimbolos(metricaDeductionsSomenteSimbolos);
 

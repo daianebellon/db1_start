@@ -7,11 +7,11 @@ public class CaracteristicasDaSenha {
     private MetricaNumeros numeros;
     private MetricaSimbolos simbolos;
     private Complexidade complexidade;
-    private MetricaDeductionsSomenteLetrasMinusculas somenteLetrasMinusculas;
-    private MetricaDeductionsSomenteLetrasMaiusculas somenteletrasMaiusculas;
-    private MetricaDeductionsSomenteLetras somenteletras;
-    private MetricaDeductionsSomenteNumeros somentenumeros;
-    private MetricaDeductionsSomenteSimbolos somenteSimbolos;
+    private MetricaDecrementaSomenteLetrasMinusculas somenteLetrasMinusculas;
+    private MetricaDecrementaSomenteLetrasMaiusculas somenteletrasMaiusculas;
+    private MetricaDecretementaSomenteLetras somenteletras;
+    private MetricaDecrementaSomenteNumeros somentenumeros;
+    private MetricaDecrementaSomenteSimbolos somenteSimbolos;
     private int score;
 
 
@@ -55,46 +55,46 @@ public class CaracteristicasDaSenha {
     }
 
 
-    public MetricaDeductionsSomenteSimbolos getSomenteSimbolos() {
+    public MetricaDecrementaSomenteSimbolos getSomenteSimbolos() {
         return somenteSimbolos;
     }
 
-    public void setSomenteSimbolos(MetricaDeductionsSomenteSimbolos somenteSimbolos) {
+    public void setSomenteSimbolos(MetricaDecrementaSomenteSimbolos somenteSimbolos) {
         this.somenteSimbolos = somenteSimbolos;
         totalScore();
     }
 
-    public MetricaDeductionsSomenteNumeros getSomentenumeros() {
+    public MetricaDecrementaSomenteNumeros getSomentenumeros() {
         return somentenumeros;
     }
 
-    public void setSomentenumeros(MetricaDeductionsSomenteNumeros somentenumeros) {
+    public void setSomentenumeros(MetricaDecrementaSomenteNumeros somentenumeros) {
         this.somentenumeros = somentenumeros;
         totalScore();
     }
 
-    public MetricaDeductionsSomenteLetras getSomenteletras() {
+    public MetricaDecretementaSomenteLetras getSomenteletras() {
         return somenteletras;
     }
 
-    public void setSomenteletras(MetricaDeductionsSomenteLetras somenteletras) {
+    public void setSomenteLetras(MetricaDecretementaSomenteLetras somenteletras) {
         this.somenteletras = somenteletras;
         totalScore();
     }
-    public MetricaDeductionsSomenteLetrasMaiusculas getSomenteletrasMaiusculas() {
+    public MetricaDecrementaSomenteLetrasMaiusculas getSomenteletrasMaiusculas() {
         return somenteletrasMaiusculas;
     }
 
-    public void setSomenteletrasMaiusculas(MetricaDeductionsSomenteLetrasMaiusculas somenteletrasMaiusculas) {
+    public void setSomenteletrasMaiusculas(MetricaDecrementaSomenteLetrasMaiusculas somenteletrasMaiusculas) {
         this.somenteletrasMaiusculas = somenteletrasMaiusculas;
         totalScore();
     }
 
-    public MetricaDeductionsSomenteLetrasMinusculas getSomenteLetrasMinusculas() {
+    public MetricaDecrementaSomenteLetrasMinusculas getSomenteLetrasMinusculas() {
         return somenteLetrasMinusculas;
     }
 
-    public void setSomenteLetrasMinusculas(MetricaDeductionsSomenteLetrasMinusculas somenteLetrasMinusculas) {
+    public void setSomenteLetrasMinusculas(MetricaDecrementaSomenteLetrasMinusculas somenteLetrasMinusculas) {
         this.somenteLetrasMinusculas = somenteLetrasMinusculas;
         totalScore();
     }

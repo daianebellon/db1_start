@@ -17,6 +17,7 @@ class VerificadorDeSenhaTest {
         assertEquals(0, caracteristicas.getLetrasMinisculas().getQuantidade());
         assertEquals(0, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(0, caracteristicas.getSomenteSimbolos().getQuantidade());
+        assertEquals(0, caracteristicas.getSomenteletras().getQuantidade());
 
     }
 
@@ -31,6 +32,7 @@ class VerificadorDeSenhaTest {
         assertEquals(5, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(0, caracteristicas.getLetrasMaiuscula().getQuantidade());
         assertEquals(0, caracteristicas.getLetrasMinisculas().getQuantidade());
+        assertEquals(0, caracteristicas.getSomenteletras().getQuantidade());
 
     }
     @Test
@@ -46,6 +48,7 @@ class VerificadorDeSenhaTest {
         assertEquals(0, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(0, caracteristicas.getSomenteletrasMaiusculas().getBonus());
         assertEquals(0, caracteristicas.getSomenteLetrasMinusculas().getBonus());
+        assertEquals(0, caracteristicas.getSomenteletras().getQuantidade());
     }
 
     @Test
@@ -57,10 +60,11 @@ class VerificadorDeSenhaTest {
         assertEquals(0, caracteristicas.getSimbolos().getQuantidade());
         assertEquals(5, caracteristicas.getLetrasMaiuscula().getQuantidade());
         assertEquals(0, caracteristicas.getLetrasMinisculas().getQuantidade());
-        assertEquals(Complexidade.FRACO, caracteristicas.getComplexidade());
+        assertEquals(Complexidade.MUITO_FRACO, caracteristicas.getComplexidade());
         assertEquals(0, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(10, caracteristicas.getSomenteletrasMaiusculas().getBonus());
         assertEquals(0, caracteristicas.getSomenteLetrasMinusculas().getBonus());
+        assertEquals(5, caracteristicas.getSomenteletras().getQuantidade());
     }
 
     @Test
@@ -72,10 +76,11 @@ class VerificadorDeSenhaTest {
         assertEquals(0, caracteristicas.getSimbolos().getQuantidade());
         assertEquals(0, caracteristicas.getLetrasMaiuscula().getQuantidade());
         assertEquals(12, caracteristicas.getLetrasMinisculas().getQuantidade());
-        assertEquals(Complexidade.FRACO, caracteristicas.getComplexidade());
+        assertEquals(Complexidade.MUITO_FRACO, caracteristicas.getComplexidade());
         assertEquals(0, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(0, caracteristicas.getSomenteletrasMaiusculas().getBonus());
         assertEquals(24, caracteristicas.getSomenteLetrasMinusculas().getBonus());
+        assertEquals(12, caracteristicas.getSomenteletras().getQuantidade());
     }
 
     @Test
@@ -91,6 +96,7 @@ class VerificadorDeSenhaTest {
         assertEquals(0, caracteristicas.getSomentenumeros().getQuantidade());
         assertEquals(0, caracteristicas.getSomenteletrasMaiusculas().getBonus());
         assertEquals(0, caracteristicas.getSomenteLetrasMinusculas().getBonus());
+        assertEquals(0, caracteristicas.getSomenteletras().getQuantidade());
     }
 }
 

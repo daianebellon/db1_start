@@ -1,6 +1,7 @@
 package br.com.daianebellon.original;
 
-public class MetricaDeductionsSomenteLetrasMaiusculas extends MetricaDaSenha {
+public class MetricaDecrementaSomenteLetrasMinusculas extends MetricaDaSenha {
+
     @Override
     void calcula(String senha) {
 
@@ -10,16 +11,15 @@ public class MetricaDeductionsSomenteLetrasMaiusculas extends MetricaDaSenha {
 
         for (int i = 0; i < chars.length; i++) {
             char c = chars[i];
-            if (Character.isUpperCase(c)) {
+            if (Character.isLowerCase(c)) {
                 total++;
             }
         }
         quantidade = total;
-        if (quantidade == senha.length()) {
+        if(quantidade == senha.length()){
             bonus = quantidade * 2;
-        } else {
+        }else {
             bonus = 0;
         }
-
     }
 }

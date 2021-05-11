@@ -1,6 +1,6 @@
 package br.com.daianebellon.original;
 
-public class MetricaDeductionsSomenteSimbolos extends MetricaDaSenha {
+public class MetricaDecrementaSomenteSimbolos extends MetricaDaSenha {
     @Override
     void calcula(String senha) {
         String[] chars = senha.replaceAll("\\s+", "").split("\\s*");
