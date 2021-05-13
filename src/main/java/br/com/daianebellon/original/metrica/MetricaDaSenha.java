@@ -1,11 +1,14 @@
-package br.com.daianebellon.original;
+package br.com.daianebellon.original.metrica;
 
+/**
+ * Classe que representa uma metrica da senha.
+ */
 public abstract class MetricaDaSenha {
+
     protected int bonus;
     protected int quantidade;
 
-    //metodo que calcula a quantidade e o bonus
-    abstract void calcula(String senha);
+    public abstract void calcula(String senha);
 
     public int getQuantidade() {
         return quantidade;

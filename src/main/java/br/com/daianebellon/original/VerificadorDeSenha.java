@@ -1,52 +1,28 @@
 package br.com.daianebellon.original;
 
+import br.com.daianebellon.original.metrica.decrementa.MetricaDecrementaQuandoSomenteLetrasMaiusculas;
+import br.com.daianebellon.original.metrica.decrementa.MetricaDecrementaQuandoSomenteLetrasMinusculas;
+import br.com.daianebellon.original.metrica.decrementa.MetricaDecrementaQuandoSomenteNumeros;
+import br.com.daianebellon.original.metrica.decrementa.MetricaDecrementaQuandoSomenteSimbolos;
+import br.com.daianebellon.original.metrica.incrementa.*;
+
 public class VerificadorDeSenha {
 
     public static CaracteristicasDaSenha getCaracteristicas(String senha){
-        CaracteristicasDaSenha caracteristicasDaSenha = new CaracteristicasDaSenha();
+        final CaracteristicasDaSenha caracteristicas = new CaracteristicasDaSenha(senha);
 
-        MetricaCaracteres metricaCaracteres = new MetricaCaracteres();
-        metricaCaracteres.calcula(senha);
-        caracteristicasDaSenha.setCaracteres(metricaCaracteres);
+        caracteristicas.adicionaMetrica(new MetricaCaracteres());
+        caracteristicas.adicionaMetrica(new MetricaLetrasMinisculas());
+        caracteristicas.adicionaMetrica(new MetricaLetrasMaiuscula());
+        caracteristicas.adicionaMetrica(new MetricaNumeros());
+        caracteristicas.adicionaMetrica(new MetricaSimbolos());
+        caracteristicas.adicionaMetrica(new MetricaDecrementaQuandoSomenteLetrasMinusculas());
+        caracteristicas.adicionaMetrica(new MetricaDecrementaQuandoSomenteLetrasMaiusculas());
+        caracteristicas.adicionaMetrica(new MetricaDecrementaQuandoSomenteNumeros());
+        caracteristicas.adicionaMetrica(new MetricaLetrasMinisculas());
+        caracteristicas.adicionaMetrica(new MetricaDecrementaQuandoSomenteSimbolos());
 
-        MetricaLetrasMinisculas metricaLetrasMinisculas = new MetricaLetrasMinisculas();
-        metricaLetrasMinisculas.calcula(senha);
-        caracteristicasDaSenha.setLetrasMinisculas(metricaLetrasMinisculas);
-
-        MetricaLetrasMaiuscula metricaLetrasMaiuscula = new MetricaLetrasMaiuscula();
-        metricaLetrasMaiuscula.calcula(senha);
-        caracteristicasDaSenha.setLetrasMaiuscula(metricaLetrasMaiuscula);
-
-        MetricaNumeros metricaNumeros = new MetricaNumeros();
-        metricaNumeros.calcula(senha);
-        caracteristicasDaSenha.setNumeros(metricaNumeros);
-
-        MetricaSimbolos metricaSimbolos = new MetricaSimbolos();
-        metricaSimbolos.calcula(senha);
-        caracteristicasDaSenha.setSimbolos(metricaSimbolos);
-
-        MetricaDecrementaSomenteLetrasMinusculas metricaDeductionsSomenteLetrasMinusculas = new MetricaDecrementaSomenteLetrasMinusculas();
-        metricaDeductionsSomenteLetrasMinusculas.calcula(senha);
-        caracteristicasDaSenha.setSomenteLetrasMinusculas(metricaDeductionsSomenteLetrasMinusculas);
-
-        MetricaDecrementaSomenteLetrasMaiusculas metricaDeductionsSomenteLetrasMaiusculas = new MetricaDecrementaSomenteLetrasMaiusculas();
-        metricaDeductionsSomenteLetrasMaiusculas.calcula(senha);
-        caracteristicasDaSenha.setSomenteletrasMaiusculas(metricaDeductionsSomenteLetrasMaiusculas);
-
-        MetricaDecretementaSomenteLetras metricaDecretementaSomenteLetras = new MetricaDecretementaSomenteLetras();
-        metricaDecretementaSomenteLetras.calcula(senha);
-        caracteristicasDaSenha.setSomenteLetras(metricaDecretementaSomenteLetras);
-
-        MetricaDecrementaSomenteNumeros metricaDeductionsSomenteNumeros = new MetricaDecrementaSomenteNumeros();
-        metricaDeductionsSomenteNumeros.calcula(senha);
-        caracteristicasDaSenha.setSomentenumeros(metricaDeductionsSomenteNumeros);
-
-        MetricaDecrementaSomenteSimbolos metricaDeductionsSomenteSimbolos = new MetricaDecrementaSomenteSimbolos();
-        metricaDeductionsSomenteSimbolos.calcula(senha);
-        caracteristicasDaSenha.setSomenteSimbolos(metricaDeductionsSomenteSimbolos);
-
-
-        return caracteristicasDaSenha;
+        return caracteristicas;
     }
 }
 

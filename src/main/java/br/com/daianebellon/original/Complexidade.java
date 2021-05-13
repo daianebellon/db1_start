@@ -7,13 +7,12 @@ public enum Complexidade {
     FORTE,
     MUITO_FORTE;
 
+    /**
+     * Metodo que devolve a complexidade com base no score.
+     * @param score score calculado a partir da quantidade de bonus.
+     * @return complexidade.
+     */
     public static Complexidade getComplexidade(int score){
-
-        if (score > 100) {
-            score = 100;
-        } else if (score < 0) {
-            score = 0;
-        }
 
         if (score < 20) {
             return MUITO_FRACO;
